@@ -21,7 +21,7 @@ The main libraries used for the project are:
 You can find the full list of required packages in the `requirements.txt` file.
 
 ## Code Structure
-'''
+```plaintext
 movie-recommendation/
 │
 ├── app.py           # Main script to run the Streamlit app
