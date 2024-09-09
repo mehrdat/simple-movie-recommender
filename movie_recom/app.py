@@ -9,7 +9,7 @@ movie_title=st.text_input("Input the Movie Name:")
 
 if st.button("Find it!"):
     #with st.spinner('Finding similar movies... 🕵️‍♂️'):
-    st.write(f"Let's find similar movies to{movie_title}")
+    st.write(f"Let's find similar movies to: {movie_title}")
 
 similar=get_content_based_recommedation(movie_title)
         
