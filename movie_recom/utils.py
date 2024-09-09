@@ -26,9 +26,6 @@ cosine_sim=cosine_similarity(movie_genre,movie_genre)
 #movie_index=dict(zip(movies['title'],range(len(movies))))
 
 
-
-
-
 def movie_finder(title):
     all_titles=movies['title'].tolist()
     closest_match=process.extractOne(title,all_titles)
