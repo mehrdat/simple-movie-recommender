@@ -5,7 +5,7 @@ from utils import movie_finder,creat_x, find_similar_movies,get_content_based_re
 
 st.title("Movie Recommender")
 
-movie_title=st.text_input("Input the movie name or anything similar to the movie you have in your mind:")
+movie_title=st.text_input("<div class='big-font'>Input the movie name or anything similar to the movie you have in your mind:</div>")
 
 if st.button("Find it!"):
     #with st.spinner('Finding similar movies... 🕵️‍♂️'):
