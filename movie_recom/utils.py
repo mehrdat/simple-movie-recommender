@@ -77,5 +77,5 @@ def get_content_based_recommedation(title,n_recommendations=10):
     sim_scores=sim_scores[1:(n_recommendations+1)]
     similar_movies=[i[0] for i in sim_scores]
     res=movies['title'].iloc[similar_movies].reset_index().drop(['index'],axis=1)
-    res['Year']=re.findall(r'\b/d+',res['title'])
+    res['Year']=re.findall(r'\b\d+',res['title'])
     return res
