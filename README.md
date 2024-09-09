@@ -21,7 +21,7 @@ The main libraries used for the project are:
 You can find the full list of required packages in the `requirements.txt` file.
 
 ## Code Structure
-
+'''
 movie-recommendation/
 │
 ├── app.py           # Main script to run the Streamlit app
@@ -29,7 +29,7 @@ movie-recommendation/
 ├── utils.py         # Helper functions used for recommendation logic
 ├── requirements.txt # Required Python libraries
 └── README.md        # Project documentation
-
+'''
 
 - **`app.py`**: This is the entry point of the application, where the Streamlit interface is created, and recommendations are displayed.
 - **`data.py`**: Handles data loading, cleaning, and any preprocessing needed.
