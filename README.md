@@ -28,6 +28,7 @@ You can find the full list of required packages in the `requirements.txt` file.
 ![Movie Recommender]
 <div style="text-align: center;">
     <img src="/img/app.jpg" alt="App Image" style="width: 50%; height: auto;">
+    <img src="/img/app2.jpg" alt="App Image" style="width: 50%; height: auto;">
 </div>
 *(Replace `your_image_path.png` with the actual image path in your repository.)*
 
