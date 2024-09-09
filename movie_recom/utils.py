@@ -76,4 +76,4 @@ def get_content_based_recommedation(title,n_recommendations=10):
     sim_scores=sorted(sim_scores,key=lambda x : x[1],reverse=True)
     sim_scores=sim_scores[1:(n_recommendations+1)]
     similar_movies=[i[0] for i in sim_scores]
-    return movies['title'].iloc[similar_movies]
+    return movies['title'].iloc[similar_movies].tolist()
