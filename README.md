@@ -20,24 +20,15 @@ The main libraries used for the project are:
 
 You can find the full list of required packages in the `requirements.txt` file.
 
-## Code Structure
-```plaintext
-movie-recommendation/
-│
-├── app.py           # Main script to run the Streamlit app
-├── data.py          # Script for handling movie dataset
-├── utils.py         # Helper functions used for recommendation logic
-├── requirements.txt # Required Python libraries
-└── README.md        # Project documentation
-'''
-
 - **`app.py`**: This is the entry point of the application, where the Streamlit interface is created, and recommendations are displayed.
 - **`data.py`**: Handles data loading, cleaning, and any preprocessing needed.
 - **`utils.py`**: Contains helper functions for the recommendation algorithm, such as filtering and calculating similarity scores.
 
 ## Screenshot
-![Movie Recommender](your_image_path.png)
-
+![Movie Recommender]
+<div style="text-align: center;">
+    <img src="./img/app.jpg" alt="App Image" style="width: 50%; height: auto;">
+</div>
 *(Replace `your_image_path.png` with the actual image path in your repository.)*
 
 ## How to Run
@@ -51,5 +42,13 @@ pip install -r requirements.txt
 streamlit run app.py
 
 
+## Code Structure
+```plaintext
+movie-recommendation/
+│
+├── app.py           # Main script to run the Streamlit app
+├── data.py          # Script for handling movie dataset
+├── utils.py         # Helper functions used for recommendation logic
+├── requirements.txt # Required Python libraries
+└── README.md        # Project documentation
 
-This is the markdown code you can copy and paste into your `README.md` file for your GitHub project. Make sure to update the `your_image_path.png` with the correct file path for your app's screenshot.
