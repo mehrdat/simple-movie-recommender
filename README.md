@@ -25,12 +25,10 @@ You can find the full list of required packages in the `requirements.txt` file.
 - **`utils.py`**: Contains helper functions for the recommendation algorithm, such as filtering and calculating similarity scores.
 
 ## Screenshot
-![Movie Recommender]
 <div style="text-align: center;">
     <img src="/img/app.jpg" alt="App Image" style="width: 50%; height: auto;">
     <img src="/img/app2.jpg" alt="App Image" style="width: 50%; height: auto;">
 </div>
-*(Replace `your_image_path.png` with the actual image path in your repository.)*
 
 ## How to Run
 
@@ -53,4 +51,3 @@ movie-recommendation/
 ├── utils.py         # Helper functions used for recommendation logic
 ├── requirements.txt # Required Python libraries
 └── README.md        # Project documentation
-
