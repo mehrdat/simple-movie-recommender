@@ -10,7 +10,7 @@ from sklearn.neighbors import NearestNeighbors
 from scipy.sparse import csr_matrix
 from sklearn.neighbors import NearestNeighbors
 from data import get_data
-
+import re
 # def bayesian_avg(ratings):
 #     bayesian_avg = (C*m+ratings.sum())/(C+ratings.count())
 #     return round(bayesian_avg, 3)
@@ -76,4 +76,6 @@ def get_content_based_recommedation(title,n_recommendations=10):
     sim_scores=sorted(sim_scores,key=lambda x : x[1],reverse=True)
     sim_scores=sim_scores[1:(n_recommendations+1)]
     similar_movies=[i[0] for i in sim_scores]
-    return movies['title'].iloc[similar_movies].reset_index().drop(['index'],axis=1)
+    res=movies['title'].iloc[similar_movies].reset_index().drop(['index'],axis=1)
+    res['Year']=re.findall(r'\b(/d+',res['title'])
+    return res
