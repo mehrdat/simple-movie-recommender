@@ -9,11 +9,25 @@ from fuzzywuzzy import process
 from sklearn.neighbors import NearestNeighbors
 from scipy.sparse import csr_matrix
 from sklearn.neighbors import NearestNeighbors
+from data import get_data
+
+# def bayesian_avg(ratings):
+#     bayesian_avg = (C*m+ratings.sum())/(C+ratings.count())
+#     return round(bayesian_avg, 3)
+ratings,movies,movie_index,index_2_movie=get_data()
+
+genres=set(g for G in movies['genres'] for g in G)
+for g in genres:
+    movies[g]=movies.genres.transform(lambda x: int(g in x))
+
+movie_genre=movies.drop(['movieId','title','genres'],axis=1)
+
+cosine_sim=cosine_similarity(movie_genre,movie_genre)
+#movie_index=dict(zip(movies['title'],range(len(movies))))
 
 
-def bayesian_avg(ratings):
-    bayesian_avg = (C*m+ratings.sum())/(C+ratings.count())
-    return round(bayesian_avg, 3)
+
+
 
 def movie_finder(title):
     all_titles=movies['title'].tolist()
@@ -56,3 +70,13 @@ def find_similar_movies(movie_id,X,movie_mapper,movie_inv_mapper,k, metric='cosi
         neighbour_ids.append(movie_inv_mapper[n])
     neighbour_ids.pop(0)
     return neighbour_ids
+
+
+def get_content_based_recommedation(title,n_recommendations=10):
+    title=movie_finder(title)
+    idx=movie_index[title]
+    sim_scores=list(enumerate(cosine_sim[idx]))
+    sim_scores=sorted(sim_scores,key=lambda x : x[1],reverse=True)
+    sim_scores=sim_scores[1:(n_recommendations+1)]
+    similar_movies=[i[0] for i in sim_scores]
+    return movies['title'].iloc[similar_movies]
